@@ -101,4 +101,4 @@ iOS 9.0 +, Xcode 7.0 +
   完成HLCategorys基础搭建
 
 # License
-HLNetworkManager is available under the MIT license. See the LICENSE file for more info.
+HLCategorys is available under the MIT license. See the LICENSE file for more info.
