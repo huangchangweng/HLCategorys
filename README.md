@@ -14,36 +14,38 @@ HLHUD中全是类方法，导入即用。
 ``` objc
 // 1.设置空数据占位点击回调，只用调用了此方法才会用空数据占位视图
 [self.tableView hl_emptyDataSetBlock:^{
-  STRONG_SELF
-  [strongSelf.tableView hl_headerBeginRefreshing];
+    STRONG_SELF
+    [strongSelf.tableView hl_headerBeginRefreshing];
 }];
+  
 // 2.在获取数据为空的时候设置
 self.tableView.hl_emptyDataSetType = HLEmptyDataSetTypeNoData;
 ```
   
 - UIScrollView+HLRefresh 基本用法
 ``` objc
-  WEAK_SELF
-  // 1.设置上拉和下拉
-    // [self.tableView hl_setRefreshWithHeaderBlock:^{ // 菊花样式
-    [self.tableView hl_setGifRefreshWithHeaderBlock:^{ // git样式
-        STRONG_SELF
-        strongSelf.page = 0;
-        [strongSelf requestData];
-    } footerBlock:^{
-        STRONG_SELF
-        strongSelf.page ++;
-        [strongSelf requestData];
-    }];
-  // 2.在数据获取后，判断数据长度，例：
-  if (self.dataArray.count == 0) {
-            // self.tableView.hl_emptyDataSetType = HLEmptyDataSetTypeNoData;
-            [self.tableView hl_footerNoData];
-        } else {
-            [self.tableView hl_footerEndRefreshing];
-        }
-        [self.tableView reloadData];
-        [self.tableView hl_headerEndRefreshing];
+WEAK_SELF
+// 1.设置上拉和下拉
+// [self.tableView hl_setRefreshWithHeaderBlock:^{ // 菊花样式
+[self.tableView hl_setGifRefreshWithHeaderBlock:^{ // git样式
+  STRONG_SELF
+  strongSelf.page = 0;
+  [strongSelf requestData];
+} footerBlock:^{
+  STRONG_SELF
+  strongSelf.page ++;
+  [strongSelf requestData];
+}];
+  
+// 2.在数据获取后，判断数据长度，例：
+if (self.dataArray.count == 0) {
+  // self.tableView.hl_emptyDataSetType = HLEmptyDataSetTypeNoData;
+  [self.tableView hl_footerNoData];
+} else {
+  [self.tableView hl_footerEndRefreshing];
+}
+[self.tableView reloadData];
+[self.tableView hl_headerEndRefreshing];
 ```
   
 - UIView+HLCategory 基本用法
