@@ -6,7 +6,6 @@
 ``` objc
 pod 'HLCategorys', '1.0.0'
 ```
-HLHUD中全是类方法，导入即用。
 
 基本使用方法:<p>
 
