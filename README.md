@@ -1,7 +1,7 @@
 # HLCategorys
 对MJRefresh、DZNEmptyDataSet封装
 
-##### 支持使用CocoaPods引入, Podfile文件中添加:`暂未支持`
+##### 支持使用CocoaPods引入, Podfile文件中添加:
 
 ``` objc
 pod 'HLCategorys', '1.0.0'
