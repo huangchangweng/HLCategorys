@@ -22,17 +22,17 @@
 
 #pragma mark - Private Method
 
-+ (UIImage *)hl_budleImageWithName:(NSString *)iamgeName
++ (UIImage *)hl_budleImageWithName:(NSString *)imageName
 {
-    /// 静态库 url 的获取
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"HLCategorys" withExtension:@"bundle"];
+    NSString *bundleName = @"HLCategorys";
+    // 静态库 url 的获取
+    NSURL *url = [[NSBundle mainBundle] URLForResource:bundleName withExtension:@"bundle"];
     if (!url) {
-        /// 动态库 url 的获取
-        url = [[NSBundle bundleForClass:[self class]] URLForResource:@"HLCategorys" withExtension:@"bundle"];
+        // 动态库 url 的获取
+        url = [[NSBundle bundleForClass:[self class]] URLForResource:bundleName withExtension:@"bundle"];
     }
     NSBundle *bundle = [NSBundle bundleWithURL:url];
-    
-    UIImage *image = [UIImage imageNamed:iamgeName inBundle:bundle compatibleWithTraitCollection:nil];
+    UIImage *image = [UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];
     return image;
 }
 
