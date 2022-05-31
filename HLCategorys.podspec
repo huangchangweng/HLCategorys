@@ -38,7 +38,7 @@ Pod::Spec.new do |spec|
   spec.frameworks = "UIKit"
 
   # 依赖第三方库
-  spec.dependency "MJRefresh", "3.7.5"
-  spec.dependency "DZNEmptyDataSet", "1.8.1"
+  spec.dependency "MJRefresh", "~> 3.7.5"
+  spec.dependency "DZNEmptyDataSet", "~> 1.8.1"
 
 end
