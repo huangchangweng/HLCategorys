@@ -7,6 +7,8 @@
 pod 'HLCategorys', '1.0.1'
 ```
 
+如果想全局替换HLCategorys的图片资源，可以在工程中新建一个名字为`HLCategorys.bundle`的bundle，参照pod中`HLCategorys.bundle`为图片资源命名。HLCategorys会优先加载当前工程中的图片资源。
+
 基本使用方法:<p>
 
 - UIScrollView+HLEmptyDataSet 基本用法
