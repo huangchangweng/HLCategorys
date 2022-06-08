@@ -95,6 +95,11 @@ if (self.dataArray.count == 0) {
 # Requirements
 
 iOS 9.0 +, Xcode 7.0 +
+    
+# Dependency
+    
+"MJRefresh", "3.7.5"
+"DZNEmptyDataSet", "1.8.1"
 
 # Version
    
