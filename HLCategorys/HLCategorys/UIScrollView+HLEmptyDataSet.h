@@ -14,12 +14,12 @@ typedef NS_ENUM(NSInteger, HLEmptyDataSetType) {
 };
 
 @interface UIScrollView (HLEmptyDataSet) <DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
-@property (nonatomic, strong) UIImage *hl_noDataImage;
-@property (nonatomic, strong) UIImage *hl_customErrorImage;
-@property (nonatomic, copy) NSString *hl_noDataText;
-@property (nonatomic, copy) NSString *hl_customErrorText;
-@property (nonatomic, assign) HLEmptyDataSetType hl_emptyDataSetType;
-@property (nonatomic, assign) CGFloat hl_verticalOffset; ///< 内容垂直偏移量 defulte 0
+@property (nonatomic, strong) UIImage *hl_noDataImage UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIImage *hl_customErrorImage UI_APPEARANCE_SELECTOR;
+@property (nonatomic, copy) NSString *hl_noDataText UI_APPEARANCE_SELECTOR;
+@property (nonatomic, copy) NSString *hl_customErrorText UI_APPEARANCE_SELECTOR;
+@property (nonatomic, assign) HLEmptyDataSetType hl_emptyDataSetType UI_APPEARANCE_SELECTOR;
+@property (nonatomic, assign) CGFloat hl_verticalOffset UI_APPEARANCE_SELECTOR; ///< 内容垂直偏移量 defulte 0
 
 /**
  *  没有网络或者没有数据显示界面的点击事件

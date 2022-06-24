@@ -66,6 +66,7 @@
             self.tableView.hl_emptyDataSetType = HLEmptyDataSetTypeNoData;
             [self.tableView hl_footerNoData];
         } else {
+//            [self.tableView hl_footerNoMoreData];
             [self.tableView hl_footerEndRefreshing];
         }
         [self.tableView reloadData];

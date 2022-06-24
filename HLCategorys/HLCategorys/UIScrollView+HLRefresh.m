@@ -111,7 +111,7 @@
 - (void)hl_footerNoMoreData
 {
     MJRefreshAutoNormalFooter *footer = (MJRefreshAutoNormalFooter *)self.mj_footer;
-    [footer setTitle:@"没有更多数据了" forState:MJRefreshStateNoMoreData];
+    [footer setTitle:self.hl_noMoreDataText forState:MJRefreshStateNoMoreData];
     [self.mj_footer setState:MJRefreshStateNoMoreData];
 }
 
@@ -123,6 +123,19 @@
     MJRefreshAutoNormalFooter *footer = (MJRefreshAutoNormalFooter *)self.mj_footer;
     [footer setTitle:@"" forState:MJRefreshStateNoMoreData];
     [self.mj_footer setState:MJRefreshStateNoMoreData];
+}
+
+#pragma mark - Getter And Setter
+
+static char *kHLNoMoreDataTextkey = "kHLNoMoreDataTextkey";
+
+- (void)setHl_noMoreDataText:(NSString *)hl_noMoreDataText {
+    NSAssert(hl_noMoreDataText, @"hl_noMoreDataText 不能为空");
+    objc_setAssociatedObject(self, &kHLNoMoreDataTextkey, hl_noMoreDataText, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (NSString *)hl_noMoreDataText {
+    return objc_getAssociatedObject(self, &kHLNoMoreDataTextkey)?:@"没有更多数据了";
 }
 
 @end

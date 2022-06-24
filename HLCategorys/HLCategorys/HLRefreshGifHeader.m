@@ -30,7 +30,7 @@
 - (void)prepare
 {
     [super prepare];
-
+    
     NSMutableArray *refreshingImages = [NSMutableArray array];
     for (NSUInteger i = 1; i<=3; i++) {
         UIImage *image = [HLRefreshGifHeader budleImageWithName:[NSString stringWithFormat:@"loading_%zd", i]];

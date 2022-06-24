@@ -10,6 +10,9 @@
 
 @interface UIScrollView (HLRefresh)
 
+/// 没有更多数据文案，默认"没有更多数据了"
+@property (nonatomic, copy) NSString *hl_noMoreDataText UI_APPEARANCE_SELECTOR;
+
 /**
  *  菊花样式：设置下拉和上拉回调
  *  headerBlock 下拉回调

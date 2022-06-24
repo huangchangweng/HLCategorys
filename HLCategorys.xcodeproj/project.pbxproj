@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB196DBD286545AF000174A9 /* UIScrollView+CustomRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BB196DBC286545AF000174A9 /* UIScrollView+CustomRefreshGifHeader.m */; };
+		BB196DC12865469A000174A9 /* CustomRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BB196DC02865469A000174A9 /* CustomRefreshGifHeader.m */; };
 		BB2288DC283F757600B71DF3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2288DB283F757600B71DF3 /* AppDelegate.m */; };
 		BB2288E2283F757600B71DF3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2288E1283F757600B71DF3 /* ViewController.m */; };
 		BB2288E5283F757600B71DF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB2288E3283F757600B71DF3 /* Main.storyboard */; };
@@ -23,6 +25,10 @@
 
 /* Begin PBXFileReference section */
 		A068E7244B119760F48C026E /* Pods_HLCategorys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HLCategorys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB196DBB286545AF000174A9 /* UIScrollView+CustomRefreshGifHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+CustomRefreshGifHeader.h"; sourceTree = "<group>"; };
+		BB196DBC286545AF000174A9 /* UIScrollView+CustomRefreshGifHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+CustomRefreshGifHeader.m"; sourceTree = "<group>"; };
+		BB196DBF2865469A000174A9 /* CustomRefreshGifHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomRefreshGifHeader.h; sourceTree = "<group>"; };
+		BB196DC02865469A000174A9 /* CustomRefreshGifHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomRefreshGifHeader.m; sourceTree = "<group>"; };
 		BB2288D7283F757600B71DF3 /* HLCategorys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HLCategorys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB2288DA283F757600B71DF3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BB2288DB283F757600B71DF3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -67,6 +73,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BB196DBE2865467A000174A9 /* CustomRefreshGifHeader */ = {
+			isa = PBXGroup;
+			children = (
+				BB196DBB286545AF000174A9 /* UIScrollView+CustomRefreshGifHeader.h */,
+				BB196DBC286545AF000174A9 /* UIScrollView+CustomRefreshGifHeader.m */,
+				BB196DBF2865469A000174A9 /* CustomRefreshGifHeader.h */,
+				BB196DC02865469A000174A9 /* CustomRefreshGifHeader.m */,
+			);
+			path = CustomRefreshGifHeader;
+			sourceTree = "<group>";
+		};
 		BB2288CE283F757600B71DF3 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +110,7 @@
 				BB2288DB283F757600B71DF3 /* AppDelegate.m */,
 				BB2288E0283F757600B71DF3 /* ViewController.h */,
 				BB2288E1283F757600B71DF3 /* ViewController.m */,
+				BB196DBE2865467A000174A9 /* CustomRefreshGifHeader */,
 				BB2288E3283F757600B71DF3 /* Main.storyboard */,
 				BB2288E6283F757700B71DF3 /* Assets.xcassets */,
 				BB2288E8283F757700B71DF3 /* LaunchScreen.storyboard */,
@@ -247,6 +265,8 @@
 				BB2288F7283F77C800B71DF3 /* UIScrollView+HLEmptyDataSet.m in Sources */,
 				BB2288FD283F786400B71DF3 /* UIView+HLCategory.m in Sources */,
 				BB60DEAB284076EC00871541 /* HLRefreshGifHeader.m in Sources */,
+				BB196DC12865469A000174A9 /* CustomRefreshGifHeader.m in Sources */,
+				BB196DBD286545AF000174A9 /* UIScrollView+CustomRefreshGifHeader.m in Sources */,
 				BB2288E2283F757600B71DF3 /* ViewController.m in Sources */,
 				BB2288DC283F757600B71DF3 /* AppDelegate.m in Sources */,
 				BB2288ED283F757700B71DF3 /* main.m in Sources */,
