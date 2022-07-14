@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "HLCategorys"
-  spec.version      = "1.0.2"
+  spec.version      = "1.0.3"
   spec.summary      = "对MJRefresh、DZNEmptyDataSet封装"
 
   # 描述

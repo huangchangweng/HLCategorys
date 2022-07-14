@@ -13,6 +13,7 @@
 #import "UIScrollView+HLEmptyDataSet.h"
 #import <objc/runtime.h>
 #import <SystemConfiguration/SystemConfiguration.h>
+#import "HLRefreshGifHeader.h"
 
 @interface UIScrollView()
 @property (nonatomic, copy)void(^hl_emptyDataSetBlock)(void);
@@ -29,7 +30,7 @@
     NSURL *url = [[NSBundle mainBundle] URLForResource:bundleName withExtension:@"bundle"];
     if (!url) {
         // 动态库 url 的获取
-        url = [[NSBundle bundleForClass:[self class]] URLForResource:bundleName withExtension:@"bundle"];
+        url = [[NSBundle bundleForClass:[HLRefreshGifHeader class]] URLForResource:bundleName withExtension:@"bundle"];
     }
     NSBundle *bundle = [NSBundle bundleWithURL:url];
     UIImage *image = [UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];
