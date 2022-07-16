@@ -4,7 +4,7 @@
 ##### 支持使用CocoaPods引入, Podfile文件中添加:
 
 ``` objc
-pod 'HLCategorys', '1.0.3'
+pod 'HLCategorys', '1.0.4'
 ```
 
 如果想全局替换HLCategorys的图片资源，可以在工程中新建一个名字为`HLCategorys.bundle`的bundle，参照pod中`HLCategorys.bundle`为图片资源命名。HLCategorys会优先加载当前工程中的图片资源。
@@ -119,6 +119,10 @@ iOS 9.0 +, Xcode 7.0 +
 
 # Version
 
+* 1.0.4 :
+
+  UIScrollView+HLEmptyDataSet底部添加按钮功能
+  
 * 1.0.3 :
 
   UIScrollView+HLEmptyDataSet使用崩溃问题

@@ -44,6 +44,11 @@
     // 自动下拉刷新
     [self.tableView hl_headerBeginRefreshing];
     
+    self.tableView.hl_buttonImage = [UIImage imageNamed:@"button"];
+    [self.tableView hl_emptyDataSetTapButtonBlock:^{
+        NSLog(@"点击了按钮");
+    }];
+    
     // 空数据占位点击回调，只用调用了此方法才会用空数据占位视图
     [self.tableView hl_emptyDataSetBlock:^{
         STRONG_SELF

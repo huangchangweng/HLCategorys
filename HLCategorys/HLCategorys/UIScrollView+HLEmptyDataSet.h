@@ -20,9 +20,14 @@ typedef NS_ENUM(NSInteger, HLEmptyDataSetType) {
 @property (nonatomic, copy) NSString *hl_customErrorText UI_APPEARANCE_SELECTOR;
 @property (nonatomic, assign) HLEmptyDataSetType hl_emptyDataSetType UI_APPEARANCE_SELECTOR;
 @property (nonatomic, assign) CGFloat hl_verticalOffset UI_APPEARANCE_SELECTOR; ///< 内容垂直偏移量 defulte 0
+@property (nonatomic, copy) UIImage *hl_buttonImage UI_APPEARANCE_SELECTOR;     ///< 按钮图片，如果不设置就没有按钮
 
 /**
  *  没有网络或者没有数据显示界面的点击事件
  */
 - (void)hl_emptyDataSetBlock:(void(^)(void))hl_emptyDataSetBlock;
+/**
+ *  没有网络或者没有数据显示按钮的点击事件
+ */
+- (void)hl_emptyDataSetTapButtonBlock:(void(^)(void))hl_emptyDataSetTapButtonBlock;
 @end

@@ -17,6 +17,7 @@
 
 @interface UIScrollView()
 @property (nonatomic, copy)void(^hl_emptyDataSetBlock)(void);
+@property (nonatomic, copy)void(^hl_emptyDataSetTapButtonBlock)(void);
 @end
 
 @implementation UIScrollView (HLEmptyDataSet)
@@ -47,6 +48,11 @@
     if (hl_emptyDataSetBlock) {
         self.emptyDataSetDelegate = self;
     }
+}
+
+- (void)hl_emptyDataSetTapButtonBlock:(void(^)(void))hl_emptyDataSetTapButtonBlock
+{
+    self.hl_emptyDataSetTapButtonBlock = hl_emptyDataSetTapButtonBlock;
 }
 
 #pragma mark - DZNEmptyDataSetSource
@@ -97,6 +103,11 @@
     return verticalOffset;
 }
 
+- (UIImage *)buttonImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state
+{
+    return self.hl_buttonImage;
+}
+
 #pragma mark - DZNEmptyDataSetDelegate
 
 - (void)emptyDataSet:(UIScrollView *)scrollView didTapView:(UIView *)view
@@ -111,6 +122,13 @@
     return YES;
 }
 
+- (void)emptyDataSet:(UIScrollView *)scrollView didTapButton:(UIButton *)button
+{
+    if (self.hl_emptyDataSetTapButtonBlock) {
+        self.hl_emptyDataSetTapButtonBlock();
+    }
+}
+
 #pragma mark - Getter And Setter
 
 static char *kHLEmptyDataSetNoDataImagekey = "kHLEmptyDataSetNoDataImagekey";
@@ -121,6 +139,9 @@ static char *kHLEmptyDataSetCustomErrorTextkey = "kHLEmptyDataSetCustomErrorText
 static char *kHLEmptyDataSetTypekey = "kHLEmptyDataSetTypekey";
 static char *kHLEmptyDataSetBlockkey = "kHLEmptyDataSetBlockkey";
 static char *kHLEmptyDataSetVerticalOffsetkey = "kHLEmptyDataSetVerticalOffsetkey";
+
+static char *kHLEmptyDataSetButtonImagekey = "kHLEmptyDataSetButtonImagekey";
+static char *kHLEmptyDataSetTapButtonBlockkey = "kHLEmptyDataSetTapButtonBlockkey";
 
 - (void)setHl_noDataImage:(UIImage *)hl_noDataImage {
     NSAssert(hl_noDataImage, @"hl_noDataImage 不能为空");
@@ -183,6 +204,22 @@ static char *kHLEmptyDataSetVerticalOffsetkey = "kHLEmptyDataSetVerticalOffsetke
 - (CGFloat)hl_verticalOffset {
     NSNumber *verticalOffset = objc_getAssociatedObject(self, &kHLEmptyDataSetVerticalOffsetkey);
     return [verticalOffset doubleValue];
+}
+
+- (void)setHl_buttonImage:(UIImage *)hl_buttonImage {
+    objc_setAssociatedObject(self, &kHLEmptyDataSetButtonImagekey, hl_buttonImage, OBJC_ASSOCIATION_RETAIN);
+}
+
+- (UIImage *)hl_buttonImage {
+    return objc_getAssociatedObject(self, &kHLEmptyDataSetButtonImagekey);
+}
+
+- (void)setHl_emptyDataSetTapButtonBlock:(void (^)(void))hl_emptyDataSetTapButtonBlock {
+    objc_setAssociatedObject(self, &kHLEmptyDataSetTapButtonBlockkey, hl_emptyDataSetTapButtonBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (void (^)(void))hl_emptyDataSetTapButtonBlock {
+    return objc_getAssociatedObject(self, &kHLEmptyDataSetTapButtonBlockkey);
 }
 
 @end
