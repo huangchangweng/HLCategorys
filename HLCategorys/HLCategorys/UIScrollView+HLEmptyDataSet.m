@@ -129,6 +129,11 @@
     }
 }
 
+- (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView
+{
+    return self.hl_emptyDataSetType != HLEmptyDataSetTypeNone;
+}
+
 #pragma mark - Getter And Setter
 
 static char *kHLEmptyDataSetNoDataImagekey = "kHLEmptyDataSetNoDataImagekey";
