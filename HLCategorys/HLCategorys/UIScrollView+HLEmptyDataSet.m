@@ -61,6 +61,7 @@
 {
     NSString *text = @"";
     switch (self.hl_emptyDataSetType) {
+        case HLEmptyDataSetTypeNone: text = @""; break;
         case HLEmptyDataSetTypeNoData: text = self.hl_noDataText; break;
         case HLEmptyDataSetTypeCustomError: text = self.hl_customErrorText; break;
     }
